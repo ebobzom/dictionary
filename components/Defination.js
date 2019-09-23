@@ -30,9 +30,13 @@ function getDefination(props){
                 </h1>
             </div> 
             }
-            {props.errorValue ? <p>This is not an <strong>English</strong> word.</p> : null}
+            {props.errorValue ? 
+            <p>
+                This is not an <strong>English</strong> word or this is the plural form of a word.
+                </p> : null
+            }
             {props.resultArr && 
-            <div>
+            <div className={'main-result'}>
                 {props.resultArr.map((ans,index) => <Result key={index} heading={ans[0]} defArr={ans[1]} />)}
             </div>
             }
