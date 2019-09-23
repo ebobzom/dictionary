@@ -53,6 +53,7 @@ class App extends React.Component{
                 }
                 let audioUrl = `https://media.merriam-webster.com/soundc11/${audioPart}/${audio}.wav`;
 
+                this.setState({result: '', audio: audioUrl, error: null});
                 this.setState({result: definations, audio: audioUrl, error: null});
 
             }else if(typeof result[0] === 'string'){
