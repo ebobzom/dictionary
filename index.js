@@ -26,7 +26,7 @@ class App extends React.Component{
         this.getEnteredWord = this.getEnteredWord.bind(this);
     }
     setDefinations(e){
-        this.setState({ word: e.target.value})
+        this.setState({ word: e.target.value, audio: this.state.audio})
     }
 
     getEnteredWord(word,e){
@@ -39,12 +39,28 @@ class App extends React.Component{
                 let audio = result[0].hwi.prs[0].sound.audio;
                 let definations = [];
                 result.map(wordObj => definations.push([wordObj.fl, wordObj.shortdef]) )
-                this.setState({result: definations, audio: audio, error: null})
+
+                // make audio url compliant with meriam webster specification
+                let audioPart; 
+                if(audio.startsWith('bix')){
+                    audioPart = 'bix'
+                } else if(audio.startsWith('gg')){
+                    audioPart = 'gg'
+                } else if(/^\d+$/.test(audio[0])){
+                    audioPart = Number(audio[0]);
+                }else{
+                    audioPart = audio[0];
+                }
+                let audioUrl = `https://media.merriam-webster.com/soundc11/${audioPart}/${audio}.wav`;
+
+                this.setState({result: definations, audio: audioUrl, error: null});
+
             }else if(typeof result[0] === 'string'){
                 this.setState({result: null, error: 'error'})
             }
         })
         .catch(e => {
+            console.log(e)
             this.setState({error: e})}
             )
      

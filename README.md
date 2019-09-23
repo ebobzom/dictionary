@@ -11,6 +11,9 @@
 
 ## Author
 ### Elijah Bobzom `ebobzom@gmail.com
-### working version found at this (link)[https://agitated-raman-c47e87.netlify.com/]
+### working version found at this [link](https://agitated-raman-c47e87.netlify.com/)
+
+## Bug
+#### Audio does not update, due to a bug in browsers. I will update this with a hack soon. [bug link](https://github.com/facebook/react/issues/9447)
 
 #### Date 23/09/2019
