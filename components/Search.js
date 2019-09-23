@@ -7,7 +7,7 @@ function Search(props){
             <input 
             className="form-search" 
             type="text"
-            placeholder="------Search Word------"
+            placeholder="--Enter An English Word--"
             value={props.word}
             onChange={props.setDef}
             >

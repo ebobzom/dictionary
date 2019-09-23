@@ -5,9 +5,38 @@ html, body{
 }
 /* General styles */
 body{
-    background-color: rgb(3, 59, 3);
-    color: rgb(235, 230, 230);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #184A45FF;
+    color: #B0B8B4FF;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p{
+    text-align: center;
+}
+
+li{
+    list-style-type: decimal;
+    font-variant: normal;
+}
+
+.main{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+span{
+    text-transform: capitalize;
+    padding: 4px;
+}
+.result{
+    width: 60%;
+    margin: 0 auto;
+}
+
+audio{
+    height: 32px;
+    margin-left: 12px;
 }
 
 /* css for header */
@@ -34,11 +63,14 @@ input[class="form-search"], button{
     padding: 10px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 3px solid gray;
 }
 
 input[class="form-search"]{
     margin-left: 25%;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
 }
 
 button{
@@ -46,4 +78,43 @@ button{
     padding: 10px;
     margin-left: 10px;
     color: gray;
+}
+
+/* Mobile view styles */
+@media screen and (max-width: 670px){
+    body{
+        color: #FC766AFF;
+    }
+    span, audio{
+        display: block;
+        margin: 0 auto;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[class="form-search"], button{
+        margin: 0 auto;
+    }
+    audio{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 320px){
+    audio{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 220px){
+    ul{
+        width: 80%;
+    }
+    .result{
+        width: 80%;
+        margin: 0 auto;
+    }
 }

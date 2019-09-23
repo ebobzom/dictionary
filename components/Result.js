@@ -3,7 +3,7 @@ import { FaDivide } from 'react-icons/fa';
 
 function Result(props){
     return (
-        <div>
+        <div className={'result'}>
             <h2>{props.heading}</h2>
             <ul>
                 {props.defArr.map((def, i) => <li key={i}>{def}</li>)}

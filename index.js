@@ -4,6 +4,14 @@ import './index.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import Defination from './components/Defination';
+import webFont from 'webfontloader';
+
+
+webFont.load({
+    google: {
+      families: ['Titillium Web:300,400,700', 'sans-serif']
+    }
+})
 
 class App extends React.Component{
     constructor(props){
@@ -23,7 +31,8 @@ class App extends React.Component{
 
     getEnteredWord(word,e){
         e.preventDefault();
-        fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.state.word}?key=20c06dbc-7b3d-47d7-af7c-4474526c7f77`)
+        
+        fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=20c06dbc-7b3d-47d7-af7c-4474526c7f77`)
         .then(response => response.json())
         .then(result => {
             if(typeof result[0] === 'object'){
@@ -36,7 +45,9 @@ class App extends React.Component{
             }
         })
         .catch(e => {
-            this.setState({error: e})})
+            this.setState({error: e})}
+            )
+     
     }
 
 
@@ -45,7 +56,7 @@ class App extends React.Component{
             <div className= 'container '>
                 <Header />
                 <Search searchWord={this.getEnteredWord} word={this.state.word} setDef={this.setDefinations} />
-                <Defination resultArr={this.state.result}  errorValue = {this.state.error} />
+                <Defination word={this.state.word} sound={this.state.audio} resultArr={this.state.result}  errorValue = {this.state.error} />
             </div>
         )
     }

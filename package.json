@@ -9,10 +9,12 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-icons": "^3.7.0"
+    "react-icons": "^3.7.0",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "SET NODE_ENV='production' && webpack"
   },
   "babel": {
     "presets": [
