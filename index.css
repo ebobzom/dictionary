@@ -1,0 +1,49 @@
+/* Reset */
+html, body{
+    padding: 0px;
+    margin: 0px;
+}
+/* General styles */
+body{
+    background-color: rgb(3, 59, 3);
+    color: rgb(235, 230, 230);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* css for header */
+h1{
+    text-align: center;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* css for search */
+form {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form-search{
+    flex: 0 1 40%;
+}
+input[class="form-search"], button{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+input[class="form-search"]{
+    margin-left: 25%;
+}
+
+button{
+    margin-left: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    color: gray;
+}
