@@ -45,7 +45,7 @@ class App extends React.Component{
             <div className= 'container '>
                 <Header />
                 <Search searchWord={this.getEnteredWord} word={this.state.word} setDef={this.setDefinations} />
-                <Defination resultArr={this.state.result}  errorValue = {this.state.error} />
+                <Defination word={this.state.word} sound={this.state.audio} resultArr={this.state.result}  errorValue = {this.state.error} />
             </div>
         )
     }
