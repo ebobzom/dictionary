@@ -21,12 +21,11 @@ function getDefination(props){
                     <span>{props.word}</span>
 
                     <audio controls>
-                    <source 
-                    src={`https://media.merriam-webster.com/soundc11/${audioPart}/${props.sound}.wav`} 
-                    type={'audio/wav'}
-                    >
-                        Your browser does not surport audio.
-                    </source>
+                        <source 
+                        src={`https://media.merriam-webster.com/soundc11/${audioPart}/${props.sound}.wav`} 
+                        type={'audio/wav'}
+                        >
+                        </source>
                     </audio>
                 </h1>
             </div> 
