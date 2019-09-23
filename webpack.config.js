@@ -5,7 +5,7 @@ module.exports = {
     entry: './index.js',
     module:{ 
     rules: [
-        {test: /\.(js)$/, use: 'babel-loader'},
+        {test: /\.(js)$/, exclude: /node_modules/, use: 'babel-loader'},
         {test: /\.(css)$/, use: ['style-loader', 'css-loader']}
         ]
     },
@@ -13,7 +13,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    mode: 'development',
+    mode: process.env.NODE_ENV === 'production'? 'production': 'development',
     plugins: [
         new htmlWebpackPlugin({
             template: path.resolve(__dirname, './index.html')
