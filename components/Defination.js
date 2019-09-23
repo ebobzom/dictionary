@@ -19,12 +19,14 @@ function getDefination(props){
             <div>
                 <h1>
                     <span>{props.word}</span>
-                    
+
                     <audio controls>
                     <source 
                     src={`https://media.merriam-webster.com/soundc11/${audioPart}/${props.sound}.wav`} 
                     type={'audio/wav'}
-                    ></source>
+                    >
+                        Your browser does not surport audio.
+                    </source>
                     </audio>
                 </h1>
             </div> 
